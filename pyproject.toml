@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sparklib"
+version = "0.1.0"
+description = "Sparky's core utilities for logging, file management, and script pipeline tooling"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+interactive = ["questionary"]
+
+[project.scripts]
+sparklib = "sparklib.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

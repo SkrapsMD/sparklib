@@ -1,0 +1,20 @@
+# Secrets
+.env
+
+# Project-specific data and outputs
+data/
+results/
+examples/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE / tools
+.vscode/
+.idea/
+.claude/
