@@ -5,13 +5,13 @@ Personal utility library for logging, file management, and script pipeline tooli
 ## Install
 
 ```bash
-pip install git+https://github.com/sparkysparksmd/sparklib.git
+pip install git+https://github.com/SkrapsMD/sparklib.git
 ```
 
 For interactive archive selection:
 
 ```bash
-pip install "sparklib[interactive] @ git+https://github.com/sparkysparksmd/sparklib.git"
+pip install "sparklib[interactive] @ git+https://github.com/SkrapsMD/sparklib.git"
 ```
 
 ## Usage
