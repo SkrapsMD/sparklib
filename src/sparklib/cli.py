@@ -9,6 +9,7 @@ import argparse
 from pathlib import Path
 
 from .utils.management.core import metadata_dir, find
+from .codebook import build_codebook
 
 
 def main():
@@ -18,6 +19,11 @@ def main():
     # metadata subcommand
     meta_parser = subparsers.add_parser("metadata", help="Extract script metadata from a directory")
     meta_parser.add_argument("path", type=str, help="Directory containing .py scripts")
+
+    # codebook subcommand
+    cb_parser = subparsers.add_parser("codebook", help="Generate a codebook document for a dataset")
+    cb_parser.add_argument("data", type=str, help="Path to the dataset to document")
+    cb_parser.add_argument("-o", "--output", type=str, default=None, help="Output path for the rendered codebook")
 
     args = parser.parse_args()
 
@@ -29,6 +35,8 @@ def main():
                 print(f"Error: Could not find directory '{args.path}'")
                 return
         metadata_dir(target)
+    elif args.command == "codebook":
+        build_codebook(args.data, output_path=args.output)
     else:
         parser.print_help()
 
